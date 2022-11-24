@@ -2,26 +2,25 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation"
-    app:startDestination="@id/mainFragment">
-
+    android:id="@+id/nav_view"
+    app:startDestination="@id/homeFragment2">
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.suraia.andela.vitrine.ui.MainFragment"
-        android:label="MainFragment" />
-    <fragment
-        android:id="@+id/gradeFragment"
+        android:id="@+id/gradeFragment2"
         android:name="com.suraia.andela.vitrine.ui.GradeFragment"
         android:label="fragment_grade"
         tools:layout="@layout/fragment_grade" />
     <fragment
-        android:id="@+id/teamFragment"
+        android:id="@+id/teamFragment2"
         android:name="com.suraia.andela.vitrine.ui.TeamFragment"
         android:label="fragment_team"
         tools:layout="@layout/fragment_team" />
     <fragment
-        android:id="@+id/timeFragment"
+        android:id="@+id/timeFragment2"
         android:name="com.suraia.andela.vitrine.ui.TimeFragment"
         android:label="fragment_time"
         tools:layout="@layout/fragment_time" />
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.suraia.andela.vitrine.ui.HomeFragment"
+        android:label="HomeFragment" />
 </navigation>

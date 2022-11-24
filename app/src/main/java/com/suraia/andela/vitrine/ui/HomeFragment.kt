@@ -8,19 +8,22 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.suraia.andela.vitrine.R
+import com.suraia.andela.vitrine.databinding.FragmentHomeBinding
 import com.suraia.andela.vitrine.databinding.FragmentMainBinding
 
 
-class MainFragment : Fragment() {
-    private lateinit var binding: FragmentMainBinding
+class HomeFragment : Fragment() {
+
+lateinit var binding: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentMainBinding.inflate(inflater, container, false)
-        //val navHostFragment = childFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
+    ): View{
+        // Inflate the layout for this fragment
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val navHostFragment = childFragmentManager.findFragmentById(binding.root.id) as NavHostFragment
 
-        //binding.btnNavigationView.setupWithNavController(navHostFragment.navController)
+        binding.btnNavigationView.setupWithNavController(navController = navHostFragment.navController)
 
         return binding.root
     }
