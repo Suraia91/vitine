@@ -6,4 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".ui.LoginActivity">
 
+    <com.google.android.material.textfield.TextInputEditText
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/edt_login"
+        android:layout_width="match_parent"
+        android:text="Phone"
+        android:inputType="number"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edt_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:text="Password"
+        app:layout_constraintStart_toEndOf="@id/edt_login"
+        app:layout_constraintTop_toBottomOf="@id/edt_login" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login"
+        app:layout_constraintStart_toEndOf="@id/edt_pwd"
+        app:layout_constraintTop_toBottomOf="@id/edt_pwd"
+        android:text="Login"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <ProgressBar
+        android:id="@+id/proBar"
+        app:layout_constraintStart_toEndOf="@id/btn_login"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

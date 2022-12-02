@@ -1,16 +1,19 @@
 package com.suraia.andela.vitrine.data.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 
 data class Response (
         val successo: Boolean,
         val mensagem: Any? = null,
-        @SerializedName("Dados")
-        val dados: List<Dado>
+        @SerializedName("dados")
+        val dados: List<Dados>
     )
-
-    data class Dado (
+@Entity
+    data class Dados (
+    @PrimaryKey
         val id: String,
         val anoLectivo: AnoLectivo,
         val curso: Curso,
@@ -20,16 +23,18 @@ data class Response (
         val anoCurricular: String,
         val horario: List<Horario>
     )
-
+@Entity
     data class AnoLectivo (
+    @PrimaryKey
         val id: String,
         val descricao: String,
         val abertura: String,
         val encerramento: String,
         val atual: Boolean
     )
-
+@Entity
     data class Curso (
+    @PrimaryKey
         val id: String,
         val nome: String,
         val descricao: String,
@@ -44,8 +49,9 @@ data class Response (
         Mestrado,
         PósGraduação
     }
-
+@Entity
     data class Horario (
+    @PrimaryKey
         val id: String,
         val docente: Docente,
         val disciplina: Disciplina,
@@ -59,15 +65,17 @@ data class Response (
         SegundaFeira,
         TerçaFeira
     }
-
+@Entity
     data class Disciplina (
+    @PrimaryKey
         val id: String,
         val nome: String,
         val codigo: String,
         val descricao: String
     )
-
+@Entity
     data class Docente (
+    @PrimaryKey
         val id: String,
         val nome: String,
         val telefone: String,

@@ -15,6 +15,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+    const val BASEURL ="https://essca-api.herokuapp.com/api/v1/"
     @Singleton
     @Provides
     fun provideOkHttp(): OkHttpClient{
