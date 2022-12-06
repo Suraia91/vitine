@@ -4,10 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.suraia.andela.vitrine.data.model.Grades
-import com.suraia.andela.vitrine.data.model.Login
-import com.suraia.andela.vitrine.data.model.LoginModel
-import com.suraia.andela.vitrine.data.model.Response
+import com.suraia.andela.vitrine.data.model.*
 import com.suraia.andela.vitrine.data.repositories.Repository
 import com.suraia.andela.vitrine.util.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,8 +20,8 @@ class LoginViewModel @Inject constructor(
     private val repository: Repository
 ):ViewModel() {
 
-    private var _loginResponse= MutableLiveData<NetworkResult<Login>>()
-    val loginResponse: LiveData<NetworkResult<Login>> = _loginResponse
+    private var _loginResponse= MutableLiveData<NetworkResult<LoginResponse>>()
+    val loginResponse: LiveData<NetworkResult<LoginResponse>> = _loginResponse
 
      fun postLogin(loginModel: LoginModel) {
         // _loginResponse.postValue(NetworkResult.Loading(true))

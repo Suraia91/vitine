@@ -2,7 +2,9 @@ package com.suraia.andela.vitrine.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import com.google.gson.annotations.SerializedName
+import com.suraia.andela.vitrine.util.LectiveTypeConverter
 
 
 data class Response (
@@ -15,7 +17,7 @@ data class Response (
     data class Dados (
     @PrimaryKey
         val id: String,
-        val anoLectivo: AnoLectivo,
+    val anoLectivo: AnoLectivo,
         val curso: Curso,
         val sala: String,
         val turno: String,
@@ -24,7 +26,7 @@ data class Response (
         val horario: List<Horario>
     )
 @Entity
-    data class AnoLectivo (
+data class AnoLectivo (
     @PrimaryKey
         val id: String,
         val descricao: String,

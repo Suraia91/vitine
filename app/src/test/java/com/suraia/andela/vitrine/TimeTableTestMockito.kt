@@ -9,17 +9,15 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.mock
+
 
 class TimeTableTestMockito {
-    private val mockRepository:Repository= mock(Repository::class.java)
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun `getTimeTableList should return timetable of specific user`()= runTest{
 
-        val time= Horario("1",Docente("1",
+        val time = Horario("1",Docente("1",
             "John","2144",
             "se@gmail.com",Nivel.Licenciatura,
             "test"), Disciplina("1","Math","MT","Matematica"),
@@ -39,11 +37,9 @@ class TimeTableTestMockito {
         )
         val timeTableList = listOf(time,time1,time2)
         val dados = Dados("1",AnoLectivo("","","","",false),Curso("","","","","",Nivel.Mestrado),"","","","",timeTableList)
-        val response: Response= Response(true,"", listOf(dados))
+        val response = Response(true,"", listOf(dados))
 
-        `when` (mockRepository.getTimeTable("auth","id")).thenReturn(flow{response
 
-        })
 
     }
 }

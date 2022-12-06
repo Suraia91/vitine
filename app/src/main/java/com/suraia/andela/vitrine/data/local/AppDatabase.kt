@@ -20,12 +20,17 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.suraia.andela.vitrine.data.model.Dados
+import com.suraia.andela.vitrine.util.CourseTypeConverter
+import com.suraia.andela.vitrine.util.LectiveTypeConverter
+import com.suraia.andela.vitrine.util.TimeTableTypeConverter
 
 /**
  * The Room database for this app
  */
 @Database(entities = [Dados::class], version = 1, exportSchema = false)
+@TypeConverters(LectiveTypeConverter::class,CourseTypeConverter::class,TimeTableTypeConverter::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun timeDao(): TimeDao
 

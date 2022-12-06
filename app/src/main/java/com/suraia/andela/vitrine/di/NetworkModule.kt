@@ -1,5 +1,6 @@
-package com.suraia.andela.vitrine.data.di
+package com.suraia.andela.vitrine.di
 
+import com.suraia.andela.vitrine.BuildConfig
 import com.suraia.andela.vitrine.data.services.VitrineService
 import dagger.Module
 import dagger.Provides
@@ -15,7 +16,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-    const val BASEURL ="https://essca-api.herokuapp.com/api/v1/"
     @Singleton
     @Provides
     fun provideOkHttp(): OkHttpClient{
@@ -31,7 +31,7 @@ object NetworkModule {
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient):Retrofit{
         return Retrofit.Builder()
-            .baseUrl("https://essca-api.herokuapp.com/api/v1/")
+            .baseUrl("https://development.essca.ao/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()

@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-data class Login (
+data class LoginResponse (
     val successo: Boolean,
     val mensagem: String,
     @SerializedName("dados")

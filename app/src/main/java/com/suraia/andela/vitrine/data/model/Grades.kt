@@ -34,7 +34,7 @@ data class Nota (
 data class Turma (
     @PrimaryKey
     val id: String,
-    val anoLectivo: AnoLectivo,
+    val anoLectivo: AnoLectivo?=null,
     val curso: Curso,
     val sala: String,
     val turno: String,
